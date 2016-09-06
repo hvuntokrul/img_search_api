@@ -23,23 +23,19 @@
     </style>
 </head>
 <body>
-    <h2>Welcome to Hvuntokrul's Excellent URL Shortener Service!</h2>
+    <h2>Welcome to Hvuntokrul's Image Search App!</h2>
     <div>
         <p>
-            Use "https://www.freecodecamp.com" link format with the API:
-            <br><code>https://fcc-link.herokuapp.com/api/https://www.freecodecamp.com</code>
+            Use <code>https://fcc-ims.herokuapp.com/api/YOUR_SEARCH_REQUEST</code> link format with the API:
+            <br>e.g. <a href="https://fcc-ims.herokuapp.com/api/zen">https://fcc-ims.herokuapp.com/api/zen</a>
         </p>
         <p>
-            And you will get a response similar to:
-            <br><code>{"original": "http://www.freecodecamp.com", "short": "https://fcc-link.herokuapp.com/5098"}</code>
+            You can supply an offset to view other (less relevant) search results, e.g.
+            <br><a href="https://fcc-ims.herokuapp.com/api/zen?offset=5">https://fcc-ims.herokuapp.com/api/zen?offset=5</a>
         </p>
         <p>
-            Now you can use the short link ID, so by going to:
-            <br><a href="https://fcc-link.herokuapp.com/5098">https://fcc-link.herokuapp.com/5098</a>
-        </p>
-        <p>
-            You will be redirected to:
-            <br><strong>http://www.freecodecamp.com</strong>
+            You can also see the latest search results by going to:
+            <br><a href="https://fcc-ims.herokuapp.com/latest/">https://fcc-ims.herokuapp.com/latest/</a>
         </p>
     </div>
     <div>
