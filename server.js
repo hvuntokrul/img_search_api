@@ -40,7 +40,7 @@ app.get('/api/(*)', function(req, res){
     if (err) throw err;
     
     db.collection('search')
-    .insert({ query : query, timestamp : Date.now()});
+    .insert({ query : query, time : Date(), timestamp : Date.now()});
     
     db.close();
   });
