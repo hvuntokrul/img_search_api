@@ -50,6 +50,11 @@ app.get('/api/(*)', function(req, res){
     if (error) throw error;
     //because response body is a string
     var srchRslt = JSON.parse(body);
+    //notify user if daily usage limit has been exceeded
+    if(srchRslt.hasOwnProperty('error')) {
+      res.send(srchRslt.error);
+      return;
+    }
     
     var reply = [];
     //pick relevant data from search results and store in array
@@ -58,7 +63,7 @@ app.get('/api/(*)', function(req, res){
      var prop = {
        'url' : srchRslt.items[i].link,
        'snippet' : srchRslt.items[i].snippet,
-       'thumbnail' : srchRslt.items[i].thumbnailLink, 
+       'thumbnail' : srchRslt.items[i].image.thumbnailLink, 
        'context' : srchRslt.items[i].image.contextLink
      };
      //add object to response
